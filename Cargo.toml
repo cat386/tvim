@@ -1,0 +1,21 @@
+[package]
+name = "tvim"
+version = "0.1.0"
+edition = "2021"
+description = "TVim — текстовый редактор в духе vim на tvision-rs: режимы, операторы, ex-команды, подсветка синтаксиса, настройки через диалоги"
+license = "MIT"
+
+[dependencies]
+# tvision-rs берётся из соседнего каталога: tvision-rs и tvim лежат рядом.
+tvision-rs = { path = "../tvision-rs" }
+
+[lib]
+name = "tvim"
+path = "src/lib.rs"
+
+[[bin]]
+name = "tvim"
+path = "src/main.rs"
+
+# Отдельное рабочее пространство (не часть tvision-rs).
+[workspace]
